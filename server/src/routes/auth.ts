@@ -4,6 +4,7 @@ import { connectDB } from "../lib/db";
 import { User } from "../models/User";
 import { loginSchema, registerSchema } from "../lib/validations";
 import { requireAuth, signToken } from "../middleware/auth";
+import { env } from "../lib/env";
 
 const router = Router();
 
@@ -71,6 +72,105 @@ router.post("/login", async (req, res) => {
   } catch (error) {
     console.error("Login error:", error);
     return res.status(500).json({ error: "Failed to sign in" });
+  }
+});
+
+router.post("/google", async (req, res) => {
+  try {
+    const { credential, token: tokenParam } = req.body || {};
+    const googleIdToken = (credential || tokenParam)?.trim();
+
+    if (!googleIdToken) {
+      return res.status(400).json({ error: "Google credential ID token is required" });
+    }
+
+    // Verify Google ID token via Google's tokeninfo endpoint
+    const verifyUrl = `https://oauth2.googleapis.com/tokeninfo?id_token=${encodeURIComponent(googleIdToken)}`;
+    const googleRes = await fetch(verifyUrl);
+
+    if (!googleRes.ok) {
+      const errData = await googleRes.json().catch(() => ({}));
+      console.error("Google token verification failed:", errData);
+      return res.status(401).json({ error: "Invalid or expired Google credential" });
+    }
+
+    const payload = (await googleRes.json()) as {
+      iss?: string;
+      sub?: string;
+      email?: string;
+      email_verified?: string | boolean;
+      name?: string;
+      picture?: string;
+      aud?: string;
+    };
+
+    if (!payload.email) {
+      return res.status(400).json({ error: "Google account does not have an associated email" });
+    }
+
+    const isEmailVerified =
+      payload.email_verified === "true" || payload.email_verified === true;
+    if (!isEmailVerified) {
+      return res.status(400).json({ error: "Google email address is not verified" });
+    }
+
+    // Optional verification of audience if server GOOGLE_CLIENT_ID is set
+    if (env.googleClientId && payload.aud && payload.aud !== env.googleClientId) {
+      console.warn(
+        `Audience mismatch: received ${payload.aud}, expected ${env.googleClientId}`
+      );
+    }
+
+    await connectDB();
+    const cleanEmail = payload.email.toLowerCase().trim();
+    const cleanName = payload.name?.trim() || cleanEmail.split("@")[0];
+    const googleSub = payload.sub ? String(payload.sub) : undefined;
+    const avatar = payload.picture || undefined;
+
+    let user = await User.findOne({
+      $or: [
+        { email: cleanEmail },
+        ...(googleSub ? [{ provider: "google", providerId: googleSub }] : []),
+      ],
+    });
+
+    if (!user) {
+      user = await User.create({
+        name: cleanName,
+        email: cleanEmail,
+        avatar,
+        provider: "google",
+        providerId: googleSub,
+        role: "customer",
+        isActive: true,
+        lastLoginAt: new Date(),
+      });
+    } else {
+      user.lastLoginAt = new Date();
+      if (!user.avatar && avatar) user.avatar = avatar;
+      if (googleSub && !user.providerId) {
+        user.providerId = googleSub;
+      }
+      if (!user.provider || user.provider === "credentials") {
+        user.provider = "google";
+      }
+      await user.save();
+    }
+
+    const authUser = {
+      id: user._id.toString(),
+      name: user.name,
+      email: user.email,
+      role: user.role as "customer" | "admin",
+      phone: user.phone || undefined,
+      avatar: user.avatar || undefined,
+    };
+
+    const token = signToken(authUser);
+    return res.json({ token, user: authUser });
+  } catch (error) {
+    console.error("Google authentication error:", error);
+    return res.status(500).json({ error: "Failed to authenticate with Google" });
   }
 });
 

@@ -9,4 +9,5 @@ export const env = {
   jwtSecret: process.env.JWT_SECRET || "dev-secret-change-me",
   jwtExpiresIn: process.env.JWT_EXPIRES_IN || "30d",
   enableCod: process.env.ENABLE_COD !== "false",
+  googleClientId: process.env.GOOGLE_CLIENT_ID || "",
 };
