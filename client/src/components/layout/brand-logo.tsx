@@ -3,7 +3,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 /** Bump when replacing public/images/hmc-logo.png so browsers don't serve a stale asset */
-const LOGO_SRC = "/images/hmc-logo.png?v=5";
+const LOGO_SRC = "/images/hmc-logo.png?v=7";
 
 type BrandLogoProps = {
   className?: string;
@@ -18,7 +18,7 @@ export function BrandLogo({ className, variant = "header", linked = true }: Bran
     <span
       className={cn(
         "relative block shrink-0 transition-transform duration-300 group-hover:scale-[1.03]",
-        isHeader ? "h-9 w-[170px] sm:h-10 sm:w-[200px] lg:h-11 lg:w-[220px]" : "h-11 w-[220px]",
+        isHeader ? "h-10 w-[185px] sm:h-11 sm:w-[210px] lg:h-12 lg:w-[230px]" : "h-12 w-[230px]",
         className
       )}
     >
