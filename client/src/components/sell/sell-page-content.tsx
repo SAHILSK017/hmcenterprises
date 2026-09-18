@@ -21,12 +21,12 @@ export function SellPageContent() {
       <div className="container-page flex w-full flex-1 flex-col justify-center py-10 sm:py-12 lg:py-8 xl:py-10">
         <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,42%)_minmax(0,1fr)] lg:gap-x-10 xl:gap-x-14">
           <div className="min-w-0 lg:sticky lg:top-24 lg:pt-1">
-            <span className="inline-flex items-center gap-2 rounded-full border border-[#BBF7D0] bg-[#F0FDF4] px-3.5 py-1 text-xs font-bold uppercase tracking-[0.2em] text-[#16A34A] shadow-xs">
-              <span className="h-2 w-2 rounded-full bg-[#16A34A] animate-pulse" />
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#99F6E4] bg-gradient-to-r from-[#F0FDFA] to-[#ECFEFF] px-3.5 py-1 text-xs font-bold uppercase tracking-[0.2em] text-[#0F766E] shadow-xs">
+              <span className="h-2 w-2 rounded-full bg-[#06B6D4] animate-pulse" />
               HMC Buyback
             </span>
             <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-[#0F172A] sm:text-5xl lg:text-[3.25rem] lg:leading-[1.08] xl:text-[3.5rem]">
-              Sell your old <span className="text-[#0D9488]">phone or Mac</span>
+              Sell your old <span className="bg-gradient-to-r from-[#0F766E] via-[#0D9488] to-[#06B6D4] bg-clip-text text-transparent">phone or Mac</span>
             </h1>
             <p className="mt-4 max-w-xl text-lg font-medium leading-relaxed text-[#64748B] sm:text-xl sm:leading-relaxed">
               Share your device details in a few steps. We evaluate smartphones and Apple MacBooks honestly and send a transparent
@@ -35,12 +35,12 @@ export function SellPageContent() {
 
             <div className="mt-10 lg:mt-12">
               <h2 className="font-display text-xl font-bold text-[#0F172A] sm:text-2xl flex items-center gap-2">
-                <span className="h-4 w-1.5 rounded-full bg-[#0D9488]" /> Why sell with HMC?
+                <span className="h-4 w-1.5 rounded-full bg-[#0F766E]" /> Why sell with HMC?
               </h2>
               <ul className="mt-5 space-y-5">
                 {PERKS.map(({ title, desc }, idx) => (
                   <li key={title} className="flex items-start gap-3">
-                    <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-[#CCFBF1] bg-[#F0FDFA] text-xs font-bold text-[#0D9488]">
+                    <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-[#99F6E4] bg-gradient-to-r from-[#F0FDFA] to-[#ECFEFF] text-xs font-bold text-[#0F766E]">
                       {idx + 1}
                     </span>
                     <div>

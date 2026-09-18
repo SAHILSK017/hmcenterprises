@@ -46,7 +46,7 @@ function RegisterForm() {
       footer={
         <>
           Already registered?{" "}
-          <Link href="/login" className="font-semibold text-[#F97316] hover:underline">
+          <Link href="/login" className="font-semibold text-[#0F766E] hover:text-[#06B6D4] hover:underline transition-colors">
             Sign in
           </Link>
         </>

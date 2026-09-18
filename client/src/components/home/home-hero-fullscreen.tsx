@@ -139,8 +139,8 @@ export function HomeHeroFullscreen() {
               className="relative z-20 pt-4 text-left lg:max-w-xl lg:pt-0"
             >
               <motion.div variants={fadeInUp}>
-                <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#FED7AA] bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-[0.15em] text-[#F97316] shadow-xs">
-                  <span className="h-2 w-2 rounded-full bg-[#F97316] animate-pulse" />
+                <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#99F6E4] bg-gradient-to-r from-[#F0FDFA] to-[#ECFEFF] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.15em] text-[#0F766E] shadow-xs">
+                  <span className="h-2 w-2 rounded-full bg-[#06B6D4] animate-pulse" />
                   HMC Mobile Marketplace
                 </span>
               </motion.div>
@@ -151,14 +151,14 @@ export function HomeHeroFullscreen() {
               >
                 <span className="block">We Know What's</span>
                 <span className="block">Inside Your Phone.</span>
-                <span className="mt-1 block text-[#0D9488]">
+                <span className="mt-1 block bg-gradient-to-r from-[#0F766E] via-[#0D9488] to-[#06B6D4] bg-clip-text text-transparent">
                   And What Comes Next.
                 </span>
               </motion.h1>
 
               <motion.p
                 variants={fadeInUp}
-                className="mt-5 max-w-xl text-[17px] font-semibold leading-relaxed text-[#F97316] sm:text-[18px]"
+                className="mt-5 max-w-xl text-[17px] font-medium leading-relaxed text-[#334155] sm:text-[18px]"
               >
                 From component-level repair to quality-checked phones, HMC Mobile takes care of every step.
               </motion.p>
@@ -174,7 +174,7 @@ export function HomeHeroFullscreen() {
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
                   <Link href="/sell-your-phone">
-                    <span className="pill-cta bg-white border-[#0D9488] text-[#0D9488] hover:bg-[#F0FDFA] shadow-xs">
+                    <span className="pill-cta bg-white border-[#0D9488] text-[#0F766E] hover:bg-gradient-to-r hover:from-[#F0FDFA] hover:to-[#ECFEFF] hover:border-[#06B6D4] shadow-xs">
                       Sell Your Phone
                     </span>
                   </Link>
@@ -249,7 +249,7 @@ export function HomeHeroFullscreen() {
             className="relative"
           >
             {/* Ambient theme glow behind the image */}
-            <div className="pointer-events-none absolute -inset-3 rounded-3xl bg-gradient-to-tr from-[#0D9488]/15 via-[#1473EA]/10 to-[#F97316]/10 blur-xl" />
+            <div className="pointer-events-none absolute -inset-3 rounded-3xl bg-gradient-to-tr from-[#0F766E]/20 via-[#06B6D4]/15 to-[#22D3EE]/15 blur-xl" />
 
             <div className="pro-card relative overflow-hidden rounded-3xl border border-[#E2E8F0] bg-white shadow-[0_16px_36px_-12px_rgba(15,23,42,0.12)] group">
               <div className="relative aspect-[4/3] w-full overflow-hidden">
@@ -567,11 +567,11 @@ export function HomeHeroFullscreen() {
           variants={staggerContainer}
           className="mt-12 grid gap-5 md:grid-cols-3"
         >
-          {/* REPAIR CARD - Light Blue */}
+          {/* REPAIR CARD */}
           <motion.div variants={fadeInUp} whileHover={{ y: -6 }}>
             <Link
               href="/mobile-repair"
-              className="pro-card group block overflow-hidden bg-white border-[#BFDBFE] hover:border-[#F97316] transition-colors"
+              className="pro-card group block overflow-hidden bg-white border-[#99F6E4] hover:border-[#06B6D4] transition-colors"
             >
               <div className="relative h-48 w-full overflow-hidden bg-slate-100">
                 <Image
@@ -586,17 +586,17 @@ export function HomeHeroFullscreen() {
                   whileHover={{ rotate: 15 }}
                   className="absolute bottom-3 left-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/95 backdrop-blur-md shadow-sm"
                 >
-                  <Wrench className="h-5 w-5 text-[#F97316]" strokeWidth={1.75} />
+                  <Wrench className="h-5 w-5 text-[#0F766E]" strokeWidth={1.75} />
                 </motion.div>
               </div>
               <div className="p-6">
-                <h3 className="font-display text-xl font-bold text-[#0F172A] group-hover:text-[#F97316] transition-colors">
+                <h3 className="font-display text-xl font-bold text-[#0F172A] group-hover:text-[#0F766E] transition-colors">
                   Mobile Repair
                 </h3>
                 <p className="mt-2 text-[15px] font-medium leading-relaxed text-[#64748B]">
                   Display, battery, charging, camera & board-level repair with live tracking.
                 </p>
-                <span className="mt-5 inline-flex items-center gap-1.5 text-[15px] font-bold text-[#F97316]">
+                <span className="mt-5 inline-flex items-center gap-1.5 text-[15px] font-bold text-[#0F766E] group-hover:text-[#06B6D4] transition-colors">
                   Learn more{" "}
                   <ArrowRight
                     className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1.5"
@@ -607,7 +607,7 @@ export function HomeHeroFullscreen() {
             </Link>
           </motion.div>
 
-          {/* SELL CARD - Light Green */}
+          {/* SELL CARD */}
           <motion.div variants={fadeInUp} whileHover={{ y: -6 }}>
             <Link
               href="/sell-your-phone"
@@ -636,7 +636,7 @@ export function HomeHeroFullscreen() {
                 <p className="mt-2 text-[15px] font-medium leading-relaxed text-[#64748B]">
                   Instant valuation, transparent offers, WhatsApp offer delivery.
                 </p>
-                <span className="mt-5 inline-flex items-center gap-1.5 text-[15px] font-bold text-[#0D9488]">
+                <span className="mt-5 inline-flex items-center gap-1.5 text-[15px] font-bold text-[#0D9488] group-hover:text-[#06B6D4] transition-colors">
                   Learn more{" "}
                   <ArrowRight
                     className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1.5"
@@ -647,11 +647,11 @@ export function HomeHeroFullscreen() {
             </Link>
           </motion.div>
 
-          {/* SHOP CARD - Light Orange */}
+          {/* SHOP CARD */}
           <motion.div variants={fadeInUp} whileHover={{ y: -6 }}>
             <Link
               href="/shop"
-              className="pro-card group block overflow-hidden bg-white border-[#FED7AA] hover:border-[#F97316] transition-colors"
+              className="pro-card group block overflow-hidden bg-white border-[#A5F3FC] hover:border-[#0891B2] transition-colors"
             >
               <div className="relative h-48 w-full overflow-hidden bg-slate-100">
                 <Image
@@ -666,17 +666,17 @@ export function HomeHeroFullscreen() {
                   whileHover={{ scale: 1.1 }}
                   className="absolute bottom-3 left-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/95 backdrop-blur-md shadow-sm"
                 >
-                  <Store className="h-5 w-5 text-[#F97316]" strokeWidth={1.75} />
+                  <Store className="h-5 w-5 text-[#06B6D4]" strokeWidth={1.75} />
                 </motion.div>
               </div>
               <div className="p-6">
-                <h3 className="font-display text-xl font-bold text-[#0F172A] group-hover:text-[#F97316] transition-colors">
+                <h3 className="font-display text-xl font-bold text-[#0F172A] group-hover:text-[#06B6D4] transition-colors">
                   Shop Phones
                 </h3>
                 <p className="mt-2 text-[15px] font-medium leading-relaxed text-[#64748B]">
                   New, used & refurbished devices plus accessories with clear warranty.
                 </p>
-                <span className="mt-5 inline-flex items-center gap-1.5 text-[15px] font-bold text-[#F97316]">
+                <span className="mt-5 inline-flex items-center gap-1.5 text-[15px] font-bold text-[#0891B2] group-hover:text-[#06B6D4] transition-colors">
                   Learn more{" "}
                   <ArrowRight
                     className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1.5"

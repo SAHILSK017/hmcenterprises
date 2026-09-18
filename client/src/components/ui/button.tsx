@@ -9,23 +9,23 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-[#0D9488] text-white hover:bg-[#0F766E] hover:-translate-y-0.5 shadow-[0_2px_12px_rgba(13,148,136,0.3)] hover:shadow-[0_4px_16px_rgba(13,148,136,0.4)] active:translate-y-0 font-semibold",
+          "bg-gradient-to-r from-[#0F766E] via-[#0D9488] to-[#06B6D4] text-white hover:opacity-95 hover:-translate-y-0.5 shadow-[0_4px_16px_rgba(15,118,110,0.35)] hover:shadow-[0_6px_20px_rgba(6,182,212,0.4)] active:translate-y-0 font-semibold",
         primary:
-          "bg-[#0D9488] text-white hover:bg-[#0F766E] hover:-translate-y-0.5 shadow-[0_2px_12px_rgba(13,148,136,0.3)] hover:shadow-[0_4px_16px_rgba(13,148,136,0.4)] active:translate-y-0 font-semibold",
+          "bg-gradient-to-r from-[#0F766E] via-[#0D9488] to-[#06B6D4] text-white hover:opacity-95 hover:-translate-y-0.5 shadow-[0_4px_16px_rgba(15,118,110,0.35)] hover:shadow-[0_6px_20px_rgba(6,182,212,0.4)] active:translate-y-0 font-semibold",
         accent:
-          "bg-[#0D9488] text-white hover:bg-[#0F766E] hover:-translate-y-0.5 shadow-[0_2px_12px_rgba(13,148,136,0.25)] hover:shadow-[0_4px_16px_rgba(13,148,136,0.35)] active:translate-y-0 font-semibold",
+          "bg-gradient-to-r from-[#06B6D4] via-[#0891B2] to-[#0F766E] text-white hover:opacity-95 hover:-translate-y-0.5 shadow-[0_4px_16px_rgba(6,182,212,0.35)] hover:shadow-[0_6px_20px_rgba(15,118,110,0.45)] active:translate-y-0 font-semibold",
         secondary:
-          "bg-white text-[#0D9488] border border-[#0D9488] hover:bg-[#F0FDFA] hover:-translate-y-0.5 hover:shadow-xs active:translate-y-0 font-semibold",
+          "bg-white text-[#0F766E] border border-[#0D9488] hover:bg-gradient-to-r hover:from-[#F0FDFA] hover:to-[#ECFEFF] hover:border-[#06B6D4] hover:text-[#0891B2] hover:-translate-y-0.5 hover:shadow-sm active:translate-y-0 font-semibold",
         outline:
-          "border border-[#0D9488] bg-white text-[#0D9488] hover:bg-[#F0FDFA] hover:-translate-y-0.5 hover:shadow-xs active:translate-y-0 font-semibold",
-        ghost: "hover:bg-[#F0FDFA] text-foreground hover:text-[#0D9488] hover:-translate-y-0.5 active:translate-y-0",
+          "border border-[#0D9488] bg-white text-[#0F766E] hover:bg-gradient-to-r hover:from-[#F0FDFA] hover:to-[#ECFEFF] hover:border-[#06B6D4] hover:text-[#0891B2] hover:-translate-y-0.5 hover:shadow-sm active:translate-y-0 font-semibold",
+        ghost: "hover:bg-gradient-to-r hover:from-[#F0FDFA] hover:to-[#ECFEFF] text-foreground hover:text-[#0F766E] hover:-translate-y-0.5 active:translate-y-0",
         success:
-          "bg-[#0D9488] text-white hover:bg-[#0F766E] hover:-translate-y-0.5 font-semibold shadow-[0_2px_10px_rgba(13,148,136,0.25)] hover:shadow-[0_4px_14px_rgba(13,148,136,0.35)] active:translate-y-0",
+          "bg-gradient-to-r from-[#0F766E] to-[#10B981] text-white hover:opacity-95 hover:-translate-y-0.5 font-semibold shadow-[0_4px_14px_rgba(15,118,110,0.3)] active:translate-y-0",
         warning:
           "bg-[#F97316] text-white hover:bg-[#EA580C] hover:-translate-y-0.5 font-semibold shadow-[0_2px_10px_rgba(249,115,22,0.25)] hover:shadow-[0_4px_14px_rgba(249,115,22,0.35)] active:translate-y-0",
         danger:
           "bg-[#EF4444] text-white hover:bg-[#DC2626] hover:-translate-y-0.5 font-semibold shadow-[0_2px_10px_rgba(239,68,68,0.25)] hover:shadow-[0_4px_14px_rgba(239,68,68,0.35)] active:translate-y-0",
-        link: "text-[#0D9488] underline-offset-4 hover:underline font-semibold",
+        link: "text-[#0F766E] hover:text-[#06B6D4] underline-offset-4 hover:underline font-semibold",
       },
       size: {
         default: "h-11 px-5 py-2",

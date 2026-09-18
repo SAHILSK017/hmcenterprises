@@ -41,7 +41,7 @@ function LoginForm() {
       footer={
         <>
           New here?{" "}
-          <Link href="/register" className="font-semibold text-[#F97316] hover:underline">
+          <Link href="/register" className="font-semibold text-[#0F766E] hover:text-[#06B6D4] hover:underline transition-colors">
             Create an account
           </Link>
         </>

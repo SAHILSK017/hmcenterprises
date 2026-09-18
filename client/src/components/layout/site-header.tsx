@@ -82,7 +82,7 @@ export function SiteHeader() {
       )}
     >
       {/* Top glowing ambient line */}
-      <div className="absolute inset-x-0 top-0 h-[2.5px] bg-gradient-to-r from-[#F97316] via-[#0D9488] to-[#F97316] opacity-90 shadow-xs" />
+      <div className="absolute inset-x-0 top-0 h-[2.5px] bg-gradient-to-r from-[#042F2E] via-[#0F766E] via-[#06B6D4] to-[#042F2E] opacity-90 shadow-xs" />
 
       <div className="flex h-12 sm:h-14 lg:h-16 w-full items-center justify-between gap-4 px-5 sm:px-8 lg:px-12 transition-all duration-300">
         {/* BRAND LOGO */}
@@ -100,14 +100,14 @@ export function SiteHeader() {
                 className={cn(
                   "group relative flex items-center gap-2 rounded-full px-4.5 py-2 text-base lg:text-[17px] font-extrabold tracking-tight transition-all duration-200",
                   active
-                    ? "text-[#0D9488]"
-                    : "text-[#1E293B] hover:text-[#0D9488]"
+                    ? "text-[#0F766E]"
+                    : "text-[#1E293B] hover:text-[#06B6D4]"
                 )}
               >
                 {active && (
                   <motion.span
                     layoutId="activeHeaderPill"
-                    className="absolute inset-0 rounded-full bg-gradient-to-r from-[#F0FDFA] via-[#CCFBF1] to-[#F0FDFA] border border-[#99F6E4]/60 shadow-[0_2px_10px_rgba(13,148,136,0.12)]"
+                    className="absolute inset-0 rounded-full bg-gradient-to-r from-[#F0FDFA] via-[#ECFEFF] to-[#F0FDFA] border border-[#99F6E4]/70 shadow-[0_2px_14px_rgba(6,182,212,0.18)]"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -115,7 +115,7 @@ export function SiteHeader() {
                   <Icon
                     className={cn(
                       "h-4.5 w-4.5 lg:h-5 lg:w-5 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-6",
-                      active ? "text-[#0D9488]" : "text-[#0D9488]"
+                      active ? "text-[#0F766E]" : "text-[#0D9488] group-hover:text-[#06B6D4]"
                     )}
                   />
                   <span className="text-base lg:text-[17px] font-black">{item.label}</span>
@@ -132,7 +132,7 @@ export function SiteHeader() {
             <Button
               variant="ghost"
               size="icon"
-              className="relative h-9 w-9 rounded-full border border-[#E2E8F0] bg-[#F8FAFC] text-[#334155] transition-all duration-200 hover:bg-[#F0FDFA] hover:border-[#99F6E4] hover:text-[#0D9488] hover:scale-105 shadow-xs"
+              className="relative h-9 w-9 rounded-full border border-[#E2E8F0] bg-[#F8FAFC] text-[#334155] transition-all duration-200 hover:bg-[#F0FDFA] hover:border-[#06B6D4]/50 hover:text-[#0F766E] hover:scale-105 shadow-xs"
               aria-label="Cart"
             >
               <ShoppingCart className="h-4 w-4" strokeWidth={2} />
@@ -142,7 +142,7 @@ export function SiteHeader() {
                   initial={{ scale: 0 }}
                   animate={{ scale: [0.7, 1.28, 1] }}
                   transition={{ duration: 0.35, ease: "easeOut" }}
-                  className="absolute -right-1 -top-1 flex h-4.5 min-w-4.5 items-center justify-center rounded-full bg-gradient-to-r from-[#0D9488] to-[#0F766E] px-1 text-[10px] font-extrabold text-white shadow-md border-2 border-white"
+                  className="absolute -right-1 -top-1 flex h-4.5 min-w-4.5 items-center justify-center rounded-full bg-gradient-to-r from-[#0F766E] to-[#06B6D4] px-1 text-[10px] font-extrabold text-white shadow-md border-2 border-white"
                 >
                   {count}
                 </motion.span>
@@ -255,11 +255,11 @@ export function SiteHeader() {
                     className={cn(
                       "flex items-center gap-3.5 rounded-2xl px-4.5 py-4 text-lg font-black transition-all",
                       active
-                        ? "bg-[#F0FDFA] text-[#0D9488] border border-[#99F6E4]/60"
-                        : "text-[#1E293B] hover:bg-[#F8FAFC] hover:text-[#0D9488]"
+                        ? "bg-gradient-to-r from-[#F0FDFA] to-[#ECFEFF] text-[#0F766E] border border-[#99F6E4]/70 shadow-xs"
+                        : "text-[#1E293B] hover:bg-[#F8FAFC] hover:text-[#0F766E]"
                     )}
                   >
-                    <Icon className={cn("h-5.5 w-5.5", active ? "text-[#0D9488]" : "text-[#0D9488]")} />
+                    <Icon className={cn("h-5.5 w-5.5", active ? "text-[#0F766E]" : "text-[#0D9488]")} />
                     {item.label}
                   </Link>
                 );
@@ -271,7 +271,7 @@ export function SiteHeader() {
                     onClick={() => setOpen(false)}
                     className="flex items-center gap-3 rounded-2xl px-4 py-3.5 text-base font-extrabold text-[#334155] hover:bg-[#F8FAFC]"
                   >
-                    <LayoutDashboard className="h-5 w-5 text-[#F97316]" />
+                    <LayoutDashboard className="h-5 w-5 text-[#0F766E]" />
                     My Account
                   </Link>
                   <button
@@ -287,7 +287,7 @@ export function SiteHeader() {
                 <Link
                   href="/login"
                   onClick={() => setOpen(false)}
-                  className="mt-2 flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#F97316] to-[#EA580C] px-5 py-3.5 text-base font-extrabold text-white shadow-md"
+                  className="mt-2 flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#0F766E] via-[#0D9488] to-[#06B6D4] px-5 py-3.5 text-base font-extrabold text-white shadow-[0_4px_16px_rgba(15,118,110,0.35)] hover:opacity-95"
                 >
                   Sign in
                 </Link>
