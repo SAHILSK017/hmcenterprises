@@ -17,6 +17,13 @@ export const metadata: Metadata = {
   },
   description:
     "Precision repair, effortless trade-in, and certified devices. Book online, track live.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon.png" }],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

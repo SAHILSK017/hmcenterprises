@@ -42,7 +42,7 @@ export function AuthShell({ mode, title, subtitle, children, footer }: AuthShell
         <aside className="relative hidden flex-col justify-between px-10 py-12 lg:flex xl:px-14">
           <div>
             <Link href="/" className="inline-flex opacity-95 transition hover:opacity-100">
-              <BrandLogo linked={false} className="h-8 w-[160px]" />
+              <BrandLogo linked={false} className="h-12 w-[63px]" />
             </Link>
             <p className="mt-10 text-[11px] font-bold uppercase tracking-[0.28em] text-[#0D9488]">
               HMC Secure Access
@@ -88,7 +88,7 @@ export function AuthShell({ mode, title, subtitle, children, footer }: AuthShell
             <div className="px-6 py-8 sm:px-8 sm:py-10">
               <div className="mb-8 lg:hidden">
                 <Link href="/">
-                  <BrandLogo linked={false} className="h-7 w-[140px]" />
+                  <BrandLogo linked={false} className="h-10 w-[52px]" />
                 </Link>
               </div>
 
